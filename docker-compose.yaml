@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:15
+    restart: always
+    ports:
+      - "16254:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: literalura
+    container_name: literalura_container
+    volumes:
+      - literalura_data:/var/lib/postgresql/data
+
+volumes:
+  literalura_data:
